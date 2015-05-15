@@ -110,7 +110,11 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-button,
+button{
+  padding-bottom: 20px;
+  padding-bottom: 20px;
+
+}
 input,
 optgroup,
 select,
@@ -1599,8 +1603,8 @@ pre code {
   }
 }
 .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 100px;
+  padding-left: 100px;
   margin-right: auto;
   margin-left: auto;
 }
