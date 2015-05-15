@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="calculatorApp">
+<html  ng-app="myCal">
 <head>
 	<title>My Angular Calculator</title>
 
@@ -9,43 +9,52 @@
 
 <body>
 <!---This is the view-->
-<div class = "container-fluid">
-
+<div class = "container-fluid" ng-controller = "myCalController as myCalc" >
+		<div load-header> </div>
 		<!---first row-->
 		<div class="row">
-			<input  class="col-md-9" type="text">
-		        <button class=" col-md-3 btn" type="button" align="right" >=</button>
+			<input  class="col-md-9" type="text" ng-model = "temp">
+		        <button class=" col-md-3 btn" type="button" align="right" ng-click="myCalc.result()">=</button>
 		</div>
 
 		<!--Second row-->
 		<div class="row">
-			<div class = "col-md-3"><button class="btn" type="button" >1</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >2</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >3</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >X</button></div>
+			<div class = "col-md-3"><button class="btn" type="button"  ng-click="myCalc.setTemp(1)">1</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.setTemp(2)" >2</button></div>
+			<div class = "col-md-3"><button class="btn" type="button"  ng-click="myCalc.setTemp(3)">3</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.mul()" >X</button></div>
 		</div>
 
 		<!--Third row-->
 		<div class="row">
-			<div class = "col-md-3"><button class="btn" type="button" >4</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >5</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >6</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >+</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.setTemp(4)" >4</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.setTemp(5)">5</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.setTemp(6)" >6</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.add()">+</button></div>
 		</div>
 
 		<!--Fourth row-->
 		<div class="row">
-			<div class = "col-md-3"><button class="btn" type="button" >7</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >8</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >9</button></div>
-			<div class = "col-md-3"><button class="btn" type="button" >/</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.setTemp(7)" >7</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.setTemp(8)" >8</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.setTemp(9)">9</button></div>
+			<div class = "col-md-3"><button class="btn" type="button" ng-click="myCalc.div()" >/</button></div>
+		</div>
+
+		<div class = "row">
+		<div class = "pull-right">
+			<span ng-bind = 'total | number:2'></span>
+		</div>
 		</div>
 
 </div>
 
+
 <!-- Dependencies -->
-    <script type="text/javascript" src="angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="myCal.js"></script>
+
+    
 </body>
 </html>
