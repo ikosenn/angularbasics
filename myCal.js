@@ -32,6 +32,7 @@ myCal.controller('myCalController', ['$scope','notifications',function($scope, n
 		$scope.temp=0;
 		this.previous_op = 3;
 	};
+
 	this.setTemp=function(number){
 
 		$scope.temp = $scope.temp.toString() + number.toString();
@@ -63,8 +64,6 @@ myCal.directive('loadHeader', function(){
 	};
 });
 
-
-
 myCal.factory('notifications', ['$window', function(win, answer){
 
 	string = "The operation resulted to: " + answer;
@@ -72,5 +71,3 @@ myCal.factory('notifications', ['$window', function(win, answer){
 	return function(string){win.alert(string)};
 
 }]);
-
-
